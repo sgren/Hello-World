@@ -1,0 +1,19 @@
+
+
+Sub test()
+Dim strValue As String
+Dim strCellNum As String
+Dim x As String
+x = 1
+
+For i = 3 To 9903 Step 5
+    strCellNum = "A" & i
+    strCellNum2 = "B" & i
+    strValue = Worksheets("Blad1").Range(strCellNum).Value
+    strValue2 = Worksheets("Blad1").Range(strCellNum2).Value
+    Debug.Print strValue
+    Worksheets("Blad2").Range("A" & x).Value = strValue
+    Worksheets("Blad2").Range("B" & x).Value = strValue2
+    x = x + 1
+Next
+End Sub
